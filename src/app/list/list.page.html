@@ -1,0 +1,19 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-title>List of Boats</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <ion-list>
+      <ion-item *ngFor="let boat of boats" class="example-item" (click)="toDetails(boat.id)" >
+        <ion-icon name="boat" slot="start"></ion-icon>
+        {{boat.name}}
+        <div class="item-note" slot="end">
+          {{boat.type}}
+        </div>
+      </ion-item>
+  </ion-list>
+  <ion-button type="button" shape="round" color="primary" expand="block" (click)="toAdd()">New Boat</ion-button>
+    
+</ion-content>

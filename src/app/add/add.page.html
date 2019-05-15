@@ -1,0 +1,36 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-buttons slot="start">
+        <ion-back-button></ion-back-button>
+    </ion-buttons>
+    <ion-title>
+      New Boat
+    </ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content padding>
+  <form [formGroup]="boatForm" (ngSubmit)="onFormSubmit(boatForm.value)">
+    <ion-item>
+      <ion-label position="floating">Boart Name</ion-label>
+      <ion-input type="text" formControlName="name"></ion-input>
+    </ion-item>
+    <ion-item>
+      <ion-label position="floating">Boart Type</ion-label>
+      <ion-input type="text" formControlName="type"></ion-input>
+    </ion-item>
+    <ion-item>
+      <ion-label position="stacked">Boart LOA</ion-label>
+      <ion-textarea formControlName="loa"></ion-textarea>
+    </ion-item>
+    <ion-item>
+      <ion-label position="stacked">Boart Beam</ion-label>
+      <ion-textarea formControlName="beam"></ion-textarea>
+    </ion-item>
+    <ion-item>
+      <ion-label position="stacked">Boart Draft</ion-label>
+      <ion-textarea formControlName="draft"></ion-textarea>
+    </ion-item>
+    <ion-button type="submit" shape="round" color="primary" expand="block" [disabled]="!boatForm.valid">Submit</ion-button>
+  </form>
+</ion-content>
