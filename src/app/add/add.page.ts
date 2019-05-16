@@ -46,7 +46,7 @@ export class AddPage implements OnInit {
     await this.api.addBoat(this.boat)
       .subscribe(res => {
           loading.dismiss();
-          this.router.navigate(['/details', { id: res.id } ]);
+          this.router.navigate(['/list']);
         }, (err) => {
           console.log(err);
           loading.dismiss();
