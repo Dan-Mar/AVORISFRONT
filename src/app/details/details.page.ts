@@ -11,7 +11,7 @@ import { Boat } from '../entity/boat';
 })
 export class DetailsPage implements OnInit {
 
-  boat: Boat = { id: null, created: null, updated: null, name: '', type: '', loa: 0, beam: 0, draft: 0};
+  boat: Boat = { id: null, name: '', type: '', loa: 0, beam: 0, draft: 0};
 
   constructor(public api: BoatService,
               public loadingController: LoadingController,

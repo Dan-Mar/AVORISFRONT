@@ -45,8 +45,6 @@ export class BoatService {
   }
 
   addBoat(boat: Boat): Observable<Boat> {
-    boat.created = new Date();
-    boat.updated = new Date();
     return this.http.post<Boat>(environment.apiUrl, boat, this.httpOptions).pipe(
       tap((res: Boat) => console.log(`added Boat w/ id=${res.id}`)),
       catchError(this.handleError<Boat>('addBoat'))
@@ -54,7 +52,6 @@ export class BoatService {
   }
 
   updateBoat(id, boat: Boat): Observable<any> {
-    boat.updated = new Date();
     const url = `${environment.apiUrl}/${id}`;
     return this.http.put(url, boat, this.httpOptions).pipe(
       tap(_ => console.log(`updated Boat id=${id}`)),

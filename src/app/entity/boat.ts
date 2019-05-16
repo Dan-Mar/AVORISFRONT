@@ -5,6 +5,4 @@ export class Boat {
     loa: number;
     beam: number;
     draft: number;
-    created: Date;
-    updated: Date;
 }
