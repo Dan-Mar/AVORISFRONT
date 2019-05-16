@@ -28,7 +28,6 @@ export class DetailsPage implements OnInit {
   }
 
   async getBoat() {
-    debugger;
     if (this.route.snapshot.paramMap.get('id') == null) {
       this.warning('Must choose a boat from the list');
     } else {
